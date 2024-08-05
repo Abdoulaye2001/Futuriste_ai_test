@@ -1,0 +1,39 @@
+<!-- Client logos area start -->
+<section class="client-list pt-100 pb-70">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-6 col-xl-5 text-center text-lg-left">
+				<div class="clients-left-part">
+					<div class="fancy-head left-al">
+						<h5 class="line-head mb-15">
+							<span class="line before d-lg-none"></span>
+							Nos Parténaires
+							<span class="line after"></span>
+						</h5>
+						<h1 class="mb-15">Testé Par Les Meilleurs Entreprises</h1>
+					</div>
+					<p class="mb-35 pr-45 pr-md-00">
+						Quisque enim ipsum, commodo et venenatis rutrum, luctus in enim.
+						Quisque dapibus lacus non pulvinar lobortis. Cras odio dolor.
+					</p>
+					<a href="/clients.php" class="btn btn-square"
+						>Voir Plus<i class="fas fa-long-arrow-alt-right ml-20"></i
+					></a>
+				</div>
+			</div>
+			<div class="col-lg-6 mt-md-60 offset-xl-1 offset-lg-0">
+				<div class="row">
+            {% for client in clients %}
+					<div class="col-sm-6">
+						<div
+							class="each-logo bg-light-white flex-center transition-4 mb-30">
+							<img src="{{client.clients_img.url}}" alt="{{client.clients_alt}}" />
+						</div>
+					</div>
+            {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Client logos area end -->

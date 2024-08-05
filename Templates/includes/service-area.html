@@ -1,0 +1,47 @@
+<!-- Service start -->
+<section class="services bg-light-white pt-95 pb-70 bg">
+  <div class="container">
+    <div class="row align-items-end mb-45">
+      <div class="col-lg-7 col-md-12 text-center text-lg-left">
+        <div class="fancy-head left-al">
+          <h5 class="line-head mb-15">
+            <span class="line before d-lg-none"></span>
+            {{services.0.services_span}}
+            <span class="line after"></span>
+          </h5>
+          <h1>{{services.0.services_h1}}</h1>
+        </div>
+      </div>
+      <div class="col-lg-5 col-md-12 text-center text-lg-right">
+        <a href="{% url "services" %}" class="btn btn-round-border mb-15 mt-md-20"
+          >Voir Plus</a
+        >
+      </div>
+    </div>
+    <div class="row">
+      {% for service in services %}
+      <div class="col-lg-4 col-md-6">
+        <div
+          class="service-box transition-4 text-center relative img-lined mb-30">
+          <div class="service-icon">
+            <div class="service-icon-bg"></div>
+            <img src="{{service.services_icon.url}}" class="transform-center" alt="" />
+          </div>
+          <div class="service-text">
+            <h4 class="f-700 mt-30 mb-10">
+              <a href="{{service.get_absolute_url}}">{{service.services_title}}</a>
+            </h4>
+            <p>
+              {{service.services_brief}}
+            </p>
+            <a href="{{service.get_absolute_url}}" class="btn btn-round mt-10"
+              >Lire Plus</a
+            >
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!-- Service end -->

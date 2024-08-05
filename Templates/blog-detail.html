@@ -1,0 +1,532 @@
+{% extends "base-home.html" %} {% load static %} {% block title %}
+<title>{{context}}</title>{% endblock %} {% block content %}
+
+<body>
+  <!-- immer banner start -->
+  <section
+    class="inner-banner pt-80 pb-95"
+    style="background-image: url('{% static "img/banner/inner-banner.jpg" %}')"
+    data-overlay="7">
+    <div class="container">
+      <div class="row z-5 align-items-center">
+        <div class="col-md-8 text-center text-md-left">
+          <h1 class="f-700 green">{{article.post_title}}</h1>
+          <span class="green-line bg-green d-none d-md-inline-block"></span>
+        </div>
+        <div class="col-md-4 text-center text-md-right">
+          <nav aria-label="breadcrumb" class="banner-breadcump">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item">
+                <a href="{% url "home" %}"
+                  ><i class="fas fa-home fs-12 mr-5"></i>Accueil</a
+                >
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Blog Details
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- blog details area start -->
+  <section class="service-details pt-100 pb-100">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 col-lg-7">
+          <!-- left part -->
+          <div class="left-blog-detail">
+            <div class="blog-by-info">
+              <ul class="list-inline fs-12">
+                <li class="list-inline-item pr-15">
+                  <i class="far fa-calendar mr-10 fs-14 green"></i>
+                  {{article.post_day}}
+                </li>
+                <li class="list-inline-item pr-15">
+                  <i class="far fa-user mr-10 fs-14 green"></i>
+                  {{article.post_author}}
+                </li>
+                <li class="list-inline-item pr-15">
+                  <i class="far fa-comments mr-10 fs-14 green"></i>
+                  {{comment_count}} Commentaires
+                </li>
+              </ul>
+            </div>
+            <h1 class="f-700 lh-13 mt-5 mb-10">{{article.post_title}}</h1>
+            <p>
+             {{article.post_p1}} <a href="{{article.post_link1}}">{{article.post_link1_content}}</a></p>
+            <p>
+             {{article.post_p2}} <a href="{{article.post_link2}}">{{article.post_link2_content}}</a></p>
+            <div class="blog-img-detail mb-15">
+              <img src="{{article.post_img_detail.url}}" alt="" />
+              <div class="blog-date text-center">
+                <h2 class="day green mb-10 f-700">
+                  {{article.post_day|date:'d'}}
+                </h2>
+                <p class="month mb-0">{{article.post_day|date:'F'}}</p>
+              </div>
+            </div>
+
+            <p>
+             {{article.post_p3}}
+            </p>
+
+            <p>
+              {{article.post_p4}}
+            </p>
+
+            <div class="block-quote-2 bg-light-white mb-20">
+              <i class="fas fa-quote-right green"></i>
+              <div class="block-quote-text z-5">
+                <p class="blue fs-18 lh-19 mb-0">
+                 {{article.post_quote}}
+                </p>
+                <span class="block-quote-by green mt-10 mb-10">{{article.post_author}}</span>
+              </div>
+            </div>
+
+            <p>
+              {{article.post_p5}} <a href="{{article.post_link2}}">{{article.post_link2_content}}</a>
+            </p>
+            <div class="row align-items-center">
+              <div class="col-xl-8 col-lg-12">
+                <ul class="tags list-inline mt-10">
+                  <li class="list-inline-item">
+                    <p class="fs-12 f-600">TAGS:</p>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="tag-link">BUSINESS</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="tag-link">MARKET</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="tag-link">MARKET STATUS</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-xl-4 col-lg-12 text-left text-xl-right mt-lg-20">
+                <ul class="social-icons black">
+                  <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="hr-1 bg-light-white mb-25 mt-20"></div>
+            <!-- blog by -->
+            <div class="d-flex flex-column flex-sm-row align-items-center">
+              <div class="team-round">
+                <img src="img/team/team-round.png" alt="" />
+              </div>
+              <div class="team-round-detail">
+                <h5 class="fs-19 f-700 mb-5">{{article.post_author_principal}}</h5>
+                <p class="mb-15">
+                  {{article.post_author_desc}}
+                </p>
+                <ul class="social-icons black">
+                  <li>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- next-prev button -->
+            <div
+              class="d-flex pt-25 pb-25 mt-25 justify-content-between next-prev-button">
+              <a href="{{const.previous_posts.slug}}" class="f-500">
+                <i class="fas fa-long-arrow-alt-left mr-15"></i>Prev
+              </a>
+              <a href="{{const.next_posts.slug}}" class="f-500">
+                Next<i class="fas fa-long-arrow-alt-right ml-15"></i>
+              </a>
+            </div>
+            <!-- comments -->
+            <div class="comments">
+              <h4 class="f-700 mt-45 mb-20">
+                Commentaires (<span>{{comment_count}}</span>)
+              </h4>
+              <ul class="connent-lists">
+                {% for comment in article.comments.all %}
+                <li>
+                  <div class="d-flex flex-column flex-sm-row">
+                    <div class="comment-image mt-10">
+                      <img src="{% static "img/team/team-round-small1.png" %}"
+                      alt="comment_profil">
+                    </div>
+                    <div class="comment-text">
+                      <div class="top-head">
+                        <h6 class="f-700">{{comment.email}}</h6>
+                        <span class="comment-date">{{comment.created_at}}</span>
+                      </div>
+                      <p class="mt-5">{{comment.content}}</p>
+                      <div class="name-replay">
+                        <ul class="list-inline fs-12">
+                          <li class="list-inline-item pr-15">
+                            <i class="far fa-user mr-10 fs-14 green"></i
+                            >{{comment.author}}
+                          </li>
+                        </ul>
+                        <a href="#repondre-{{comment.id}}" class="reply">
+                          <i class="fas fa-reply mr-10"></i> Répondre
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li class="replay-comment">
+                    {% for reply in comment.replies.all %}
+                  <div class="d-flex flex-column flex-sm-row">
+                    <div class="comment-image mt-10">
+                      <img src="{% static "img/team/team-round-small1.png" %}" alt="" />
+                    </div>
+                    <div class="comment-text">
+                      <div class="top-head">
+                        <h6 class="f-700">{{reply.email}}</h6>
+                        <span class="comment-date">{{reply.created_at}}</span>
+                      </div>
+                      <p class="mt-5">
+                       {{reply.content}}
+                      </p>
+                      <div class="name-replay">
+                        <ul class="list-inline fs-12">
+                          <li class="list-inline-item pr-15">
+                            <i class="far fa-user mr-10 fs-14 green"></i>{{reply.author}}
+                          </li>
+                        </ul>
+                        <a href="#repondre-{{comment.id}}" class="reply">
+                          <i class="fas fa-reply mr-10"></i> Répondre
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+            <div class="post-comment mb-md-60">
+              <h4 class="f-700 mt-40 mb-20">Poster Votre Commentaire</h4>
+              <form method="POST">
+                {% csrf_token %}
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="form-group relative mb-30">
+                      <input
+                        type="text"
+                        class="form-control input-white green-border"
+                        id="name"
+                        placeholder="Enter your name"
+                        name="author" />
+                      <i class="far fa-user transform-v-center"></i>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group relative mb-30">
+                      <input
+                        type="email"
+                        class="form-control input-white green-border"
+                        id="email"
+                        placeholder="Enter your email"
+                        name="email" />
+                      <i class="far fa-envelope transform-v-center"></i>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <textarea
+                      class="form-control input-white green-border mb-30"
+                      id="message"
+                      cols="30"
+                      rows="7"
+                      placeholder="Your message"
+                      name="content"></textarea>
+                  </div>
+                  <input type="hidden" name="parent_id" value="{{comment.id}}">
+                  <input type="hidden" name="parent_comment_name" value="{{comment.author}}">
+                  <div class="col-lg-12">
+                    <button class="btn btn-square">
+                      COMMNTER<i class="fas fa-long-arrow-alt-right ml-20"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- right-part -->
+        <div class="col-xl-4 col-lg-5">
+          <div class="right-box bg-light-white mb-30">
+            <div class="right-box-head">
+              <h4>Search</h4>
+            </div>
+            <div class="right-box-content">
+              <form method="GET" class="relative mt-10 mb-10">
+                <input
+                  type="text"
+                  class="form-control input-white search-white"
+                  id="search2"
+                  placeholder="Search here.." name="query" />
+                <i class="fas fa-search transform-v-center green"></i>
+              </form>
+            </div>
+          </div>
+
+          <div class="right-box bg-light-white mb-30">
+            <div class="right-box-head">
+              <h4>Popular Posts</h4>
+            </div>
+            <div class="right-box-content mt-10 mb-10">
+              {% for post in aticles_populaires %}
+              <a href="#" class="popular-post d-flex align-items-center">
+                <div class="popular-post-img mr-20">
+                  <img src="{{post.post_img.url}}" alt="" />
+                  <div class="full-cover bg-green-op-8 transition-4">
+                    <i class="fas fa-external-link-alt transform-center"></i>
+                  </div>
+                </div>
+                <div class="popular-post-text">
+                  <p class="mb-5">{{post.post_title}}</p>
+                  <span>{{post.post_day}}</span>
+                </div>
+              </a>
+              {% endfor %}
+            </div>
+          </div>
+
+          <div class="right-box bg-light-white mb-30">
+            <div class="right-box-head">
+              <h4>Categories <span style="background: #000; padding: 8px; margin-left: 8px; color: #fff; text-align: center;  width: 30px; height: auto; border-radius: 4px;">{{categorie}}</span></h4>
+            </div>
+            <div class="right-box-content">
+              <div class="categories mb-5">
+                <ul>
+                  {% for categorie in categorie_articles %}
+                  <li>
+                    <a href="#"
+                      >{{categorie.cat_name}}<span class="count-number">{{categorie.num_articles}}</span>
+                    </a>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-box bg-light-white mb-30">
+            <div class="right-box-head">
+              <h4>Instagram</h4>
+            </div>
+            <div class="right-box-content">
+              <div class="instagram mt-10 mb-10">
+                <div class="d-flex mb-10">
+                  <div class="each-gallery">
+                    <a
+                      class="gallery-links"
+                      href="{% static "img/gallery/gal1-big.jpg" %}"
+                      title="Gallery description here">
+                      <img src="{% static "img/gallery/gal1.jpg" %}" alt="" />
+                      <div class="full-cover bg-green-op-8 transition-4">
+                        <i
+                          class="fas fa-expand-arrows-alt transform-center"></i>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="each-gallery">
+                    <a
+                      class="gallery-links"
+                      href="{% static "img/gallery/gal2-big.jpg" %}"
+                      title="Gallery description here">
+                      <img src="{% static "img/gallery/gal2.jpg" %}" alt="" />
+                      <div class="full-cover bg-green-op-8 transition-4">
+                        <i
+                          class="fas fa-expand-arrows-alt transform-center"></i>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="each-gallery">
+                    <a
+                      class="gallery-links"
+                      href="{% static "img/gallery/gal3-big.jpg" %}"
+                      title="Gallery description here">
+                      <img src="{% static "img/gallery/gal3.jpg" %}" alt="" />
+                      <div class="full-cover bg-green-op-8 transition-4">
+                        <i
+                          class="fas fa-expand-arrows-alt transform-center"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="d-flex mb-10">
+                  <div class="each-gallery">
+                    <a
+                      class="gallery-links"
+                      href="{% static "img/gallery/gal4-big.jpg" %}"
+                      title="Gallery description here">
+                      <img src="{% static "img/gallery/gal4.jpg" %}" alt="" />
+                      <div class="full-cover bg-green-op-8 transition-4">
+                        <i
+                          class="fas fa-expand-arrows-alt transform-center"></i>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="each-gallery">
+                    <a
+                      class="gallery-links"
+                      href="{% static "img/gallery/gal5-big.jpg" %}"
+                      title="Gallery description here">
+                      <img src="{% static "img/gallery/gal5.jpg" %}" alt="" />
+                      <div class="full-cover bg-green-op-8 transition-4">
+                        <i
+                          class="fas fa-expand-arrows-alt transform-center"></i>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="each-gallery">
+                    <a
+                      class="gallery-links"
+                      href="{% static "img/gallery/gal6-big.jpg" %}"
+                      title="Gallery description here">
+                      <img src="{% static "img/gallery/gal6.jpg" %}" alt="" />
+                      <div class="full-cover bg-green-op-8 transition-4">
+                        <i
+                          class="fas fa-expand-arrows-alt transform-center"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="d-flex">
+                  <div class="each-gallery">
+                    <a
+                      class="gallery-links"
+                      href="{% static "img/gallery/gal7-big.jpg" %}"
+                      title="Gallery description here">
+                      <img src="{% static "img/gallery/gal7.jpg" %}" alt="" />
+                      <div class="full-cover bg-green-op-8 transition-4">
+                        <i
+                          class="fas fa-expand-arrows-alt transform-center"></i>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="each-gallery">
+                    <a
+                      class="gallery-links"
+                      href="{% static "img/gallery/gal8-big.jpg" %}"
+                      title="Gallery description here">
+                      <img src="{% static "img/gallery/gal8.jpg" %}" alt="" />
+                      <div class="full-cover bg-green-op-8 transition-4">
+                        <i
+                          class="fas fa-expand-arrows-alt transform-center"></i>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="each-gallery">
+                    <a
+                      class="gallery-links"
+                      href="{% static "img/gallery/gal9-big.jpg" %}"
+                      title="Gallery description here">
+                      <img src="{% static "img/gallery/gal9.jpg" %}" alt="" />
+                      <div class="full-cover bg-green-op-8 transition-4">
+                        <i
+                          class="fas fa-expand-arrows-alt transform-center"></i>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-box bg-light-white mb-30">
+            <div class="right-box-head">
+              <h4>Tags</h4>
+            </div>
+            <div class="right-box-content">
+              <div class="tags-widget">
+                <ul class="tags list-inline mt-10">
+                  <li class="list-inline-item">
+                    <a href="#" class="tag-link">BUSINESS</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="tag-link">MARKET</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="tag-link">INDUSTRY</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="tag-link">MARKET STATUS</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="tag-link">DESIGN</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="tag-link">MUTUAL FUNDS</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="tag-link">WEB DESIGN</a>
+                  </li>
+                  <li class="list-inline-item">
+                    <a href="#" class="tag-link">GRAPHIC</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-box bg-light-white mb-30">
+            <div class="right-box-head">
+              <h4>Follow Us</h4>
+            </div>
+            <div class="right-box-content">
+              <div class="social-profile mt-10 mb-10">
+                <a href="#" class="social-profile-box">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-profile-box">
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-profile-box">
+                  <i class="fab fa-google-plus-g"></i>
+                </a>
+                <a href="#" class="social-profile-box">
+                  <i class="fab fa-pinterest-p"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-box ad-banner bg-light-white mb-30">
+            <a href="#" class="d-block">
+              <img src="{% static "img/service/ad-banner.jpg" %}" class="w-100" alt="" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Blog details area end -->
+
+  {% endblock %}

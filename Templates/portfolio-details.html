@@ -1,0 +1,185 @@
+{% extends "base-home.html" %}
+{% load static %}
+{% block title %}  <title>{{title}}</title>{% endblock %}
+{% block content %}
+
+    <body>
+
+        <!-- immer banner start -->
+        <section class="inner-banner pt-80 pb-95" style="background-image: url('{% static "img/banner/inner-banner.jpg" %}');" data-overlay="7">
+            <div class="container">
+                <div class="row z-5 align-items-center">
+                    <div class="col-md-8 text-center text-md-left">
+                        <h1 class="f-700 green">{{projects.portfolio_title}}</h1>
+                        <span class="green-line bg-green d-none d-md-inline-block"></span>
+                    </div>
+                    <div class="col-md-4 text-center text-md-right">
+                        <nav aria-label="breadcrumb" class="banner-breadcump">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="{% url "home" %}"><i class="fas fa-home fs-12 mr-5"></i>Accueil</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Portfolio Details</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- portfolio deetails area start -->
+        <section class="case-details pt-90 pb-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 mb-md-35">
+                        <div class="case-info">
+                            <h5 class="line-right green f-700 fs-19 mb-15">{{projects.client}}</h5>
+                            <p class="fs-15 f-500">{{projects.client_detail}}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-md-35">
+                        <div class="case-info">
+                            <h5 class="line-right green f-700 fs-19 mb-15">Service</h5>
+                            <p class="fs-15 f-500">{{projects.client_demande}}</p>
+                            <p class="fs-15 f-500">{{projects.client_demande1}}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6 mb-sm-35">
+                        <div class="case-info">
+                            <h5 class="line-right green f-700 fs-19 mb-15">Date</h5>
+                            <p class="fs-15 f-500">{{projects.portfolio_date}}</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="case-info">
+                            <h5 class="line-right green f-700 fs-19 mb-15">Equipes</h5>
+                            <p class="fs-15 f-500">{{projects.equipe_name}} - <span class="fs-13 f-400">{{projects.equipe_job}}</span></p>
+                            <p class="fs-15 f-500">{{projects.equipe_name1}} - <span class="fs-13 f-400">{{projects.equipe_job1}}</span></p>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="hr-2 bg-light-white mt-50 mb-55"></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-5">
+                        <h5 class="fs-19 lh-19 case-quote pr-40 mb-md-30 pr-sm-00">{{projects.portfolio_h5}}</h5>
+                    </div>
+                    <div class="col-lg-6 offset-lg-1">
+                        <p class="mb-30">{{projects.portfolio_p}}</p>
+                        <p>{{projects.portfolio_p1}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="video-area-case relative shadow-2 mt-55 mb-60 mb-md-35">
+                            <img src="{{projects.portfolio_video_img.url}}" alt="">
+                            <div class="blob green transform-center">
+                                <a href="{{projects.portfolio_link}}" class="popup-video"> <i class="fas fa-play"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <p class="mb-30">{{projects.portfolio_p2}}</p>
+                        <p>{{projects.portfolio_p3}}</p>
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 mt-md-15">
+                        <div class="row">
+                            <div class="col-sm-4 col-6">
+                                <div class="each-gallery case-gallery-links">
+                                    <a class="gallery-links" href="{{projects.portfolio_img_projects.url}}" title="{{projects.portfolio_img_title}}">
+                                        <img src="{{projects.portfolio_img_projects.url}}" alt="">
+                                        <div class="full-cover bg-green-op-8 transition-4">
+                                            <i class="fas fa-expand-arrows-alt transform-center"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-6">
+                                <div class="each-gallery case-gallery-links">
+                                    <a class="gallery-links" href="{{projects.portfolio_img_projects1.url}}" title="{{projects.portfolio_img_title1}}">
+                                        <img src="{{projects.portfolio_img_projects1.url}}" alt="">
+                                        <div class="full-cover bg-green-op-8 transition-4">
+                                            <i class="fas fa-expand-arrows-alt transform-center"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-6">
+                                <div class="each-gallery case-gallery-links">
+                                    <a class="gallery-links" href="{{projects.portfolio_img_projects2.url}}" title="{{projects.portfolio_img_title2}}">
+                                        <img src="{{projects.portfolio_img_projects2.url}}" alt="">
+                                        <div class="full-cover bg-green-op-8 transition-4">
+                                            <i class="fas fa-expand-arrows-alt transform-center"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-6">
+                                <div class="each-gallery case-gallery-links">
+                                    <a class="gallery-links" href="{{projects.portfolio_img_projects3.url}}" title="{{projects.portfolio_img_title3}}">
+                                        <img src="{{projects.portfolio_img_projects3.url}}" alt="">
+                                        <div class="full-cover bg-green-op-8 transition-4">
+                                            <i class="fas fa-expand-arrows-alt transform-center"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-6">
+                                <div class="each-gallery case-gallery-links">
+                                    <a class="gallery-links" href="{{projects.portfolio_img_projects4.url}}" title="{{projects.portfolio_img_title4}}">
+                                        <img src="{{projects.portfolio_img_projects4.url}}" alt="">
+                                        <div class="full-cover bg-green-op-8 transition-4">
+                                            <i class="fas fa-expand-arrows-alt transform-center"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 col-6">
+                                <div class="each-gallery case-gallery-links">
+                                    <a class="gallery-links" href="{{projects.portfolio_img_projects5.url}}" title="{{projects.portfolio_img_title5}}">
+                                        <img src="{{projects.portfolio_img_projects5.url}}" alt="">
+                                        <div class="full-cover bg-green-op-8 transition-4">
+                                            <i class="fas fa-expand-arrows-alt transform-center"></i>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="hr-2 bg-light-white mt-35 mb-50"></div>
+                    </div>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-left">
+                        <div class="d-flex share-case justify-content-center justify-content-md-start">
+                            <p class="fs-16 mr-20 mb-0">Share:</p>
+                            <ul class="social-icons black mb-sm-30">
+                                <li>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </li>
+                                <li>
+                                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <div class="next-prev-caser">
+                            <a class="f-600 pr-40" href="{{const.previous_project.slug}}"><i class="fas fa-long-arrow-alt-left mr-25"></i>PRE</a>
+                            <a class="f-600 pl-40" href="{{const.next_project.slug}}">SUI<i class="fas fa-long-arrow-alt-right ml-25"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- portfolio deetails area end -->
+
+    {% endblock %}

@@ -1,0 +1,41 @@
+/* Devis style */
+
+.container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+}
+
+.container h1 {
+        text-align: center;
+        color: #000;
+}
+
+
+.container .tab {
+        display: none;
+}
+
+.container .steps {
+        text-align: center;
+        margin-top: 20px;
+}
+
+.container .step {
+        height: 18px;
+        width: 18px;
+        margin: 0 2px;
+        color: #fff;
+        font-weight: 600;
+        background-color: #c32a36;
+        border: none;
+        border-radius: 50%;
+        display: inline-block;
+}
+
+.container .step.active {
+        background-color: #4CAF50;
+}

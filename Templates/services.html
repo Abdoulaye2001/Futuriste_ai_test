@@ -1,0 +1,140 @@
+{% extends "base-home.html" %} {% load static %} {% block title %}
+<title>{{context}}</title>{% endblock %} {% block content %}
+
+<body>
+  <!-- immer banner start -->
+  <section
+    class="inner-banner pt-80 pb-95"
+    style="background-image: url('{% static "img/banner/inner-banner.jpg" %}')"
+    data-overlay="7">
+    <div class="container">
+      <div class="row z-5 align-items-center">
+        <div class="col-md-8 text-center text-md-left">
+          <h1 class="f-700 green">Services</h1>
+          <span class="green-line bg-green d-none d-md-inline-block"></span>
+        </div>
+        <div class="col-md-4 text-center text-md-right">
+          <nav aria-label="breadcrumb" class="banner-breadcump">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item">
+                <a href="index.html"
+                  ><i class="fas fa-home fs-12 mr-5"></i>Accueil</a
+                >
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Services
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- immer banner end -->
+  
+  {% include "includes/service-area.html" %}
+
+  <!-- Request callback start -->
+  <section
+    class="callback-area pt-95 pb-85"
+    style="background-image: url({% static "'img/banner/banner_1.jpg" %}')"
+    data-overlay="9">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="fancy-head text-center relative z-5 mb-40 wow fadeInDown">
+            <h5 class="line-head mb-15 white">
+              <span class="line before bg-white"></span>
+              Contactez-Nous
+              <span class="line after bg-white"></span>
+            </h5>
+            <h1 class="white">Remplissez le formulaire</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xl-12">
+          <form action="#" class="relative z-5 wow fadeInUp">
+            <div class="row">
+              <div class="col-xl-10 col-lg-12">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group relative">
+                      <input
+                        type="text"
+                        class="form-control input-white shadow-2"
+                        id="name"
+                        placeholder="Nom" />
+                      <i class="far fa-user transform-v-center"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group relative">
+                      <input
+                        type="email"
+                        class="form-control input-white shadow-2"
+                        id="email"
+                        placeholder="Email" />
+                      <i class="far fa-envelope transform-v-center"></i>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="form-group relative">
+                      <input
+                        type="text"
+                        class="form-control input-white shadow-2"
+                        id="phone"
+                        placeholder="Numéro Tel" />
+                      <i class="fas fa-mobile-alt transform-v-center"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2 col-lg-12">
+                <button
+                  class="btn btn-blue btn-block request-btn uppercase shadow-2">
+                  Envoyer
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Request callback end -->
+  {% include "includes/faq-area.html" %}
+
+  {% include "includes/pricing-area.html" %}
+
+  <!-- how it works area start -->
+  <section
+    class="how-it-works pt-100 pb-100 pt-sm-30 pb-sm-30"
+    style="background-image: url('{% static "img/bg/bg-1.jpg" %}')"
+    data-overlay="9">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3 text-center mt-15">
+          <div class="how-it-content z-5 mt-60">
+            <div class="blob green mx-auto">
+              <a
+                href="https://www.youtube.com/watch?v=qtQgbdmIO30"
+                class="popup-video">
+                <i class="fas fa-play"></i
+              ></a>
+            </div>
+            <h1 class="white f-700 mt-35">Comment Nous Travaillons ?</h1>
+            <p class="white mt-10 mb-55">
+              Quisque enim ipsum, commodo et venenatis rutrum, luctus in enim.
+              Quisque dapibus lacus non pulvinar lobortis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- how it works area end -->
+  {% include "includes/cta-clients.html" %}
+
+  {% endblock %}
+</body>

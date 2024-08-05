@@ -1,0 +1,343 @@
+{% extends "base-home.html" %} {% load static %} {% block title %}
+<title>{{context}}</title>{% endblock %} {% block content %}
+
+<body>
+
+   <!-- immer banner start -->
+   <section class="inner-banner pt-80 pb-95" style="background-image: url({% static "'img/banner/inner-banner.jpg'" %});"
+      data-overlay="7">
+      <div class="container">
+         <div class="row z-5 align-items-center">
+            <div class="col-md-8 text-center text-md-left">
+               <h1 class="f-700 green">Jobs Détails</h1>
+               <span class="green-line bg-green d-none d-md-inline-block"></span>
+            </div>
+            <div class="col-md-4 text-center text-md-right">
+               <nav aria-label="breadcrumb" class="banner-breadcump">
+                  <ol class="breadcrumb justify-content-center">
+                     <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home fs-12 mr-5"></i>Accueil</a>
+                     </li>
+                     <li class="breadcrumb-item active" aria-current="page">Jobs Détails</li>
+                  </ol>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- career top area start -->
+   <section class="top-career bg-light-white pt-60 pb-60">
+      <div class="container">
+         <div class="row align-items-end">
+            <div class="col-lg-7 text-center text-lg-left">
+               <p class="green f-500 mb-5">{{emplois.job_time}}</p>
+               <h2 class="f-700 mb-5 lh-13">{{emplois.job_title}}</h2>
+               <ul class="list-inline fs-12">
+                  <li class="list-inline-item pr-15">
+                     <i class="fas fa-map-marker-alt mr-10 fs-14 green"></i> {{emplois.job_location}}
+                  </li>
+                  <li class="list-inline-item pr-15">
+                     <i class="fas fa-dollar-sign mr-10 fs-14 green"></i> {{emplois.job_price}}
+                  </li>
+               </ul>
+            </div>
+            <div class="col-lg-5 text-center text-lg-right">
+               <p class="mb-5 fs-13">{{emplois.job_date}}</p>
+               <a onclick="openModal()" href="#" class="btn btn-square blob-small mb-10 mt-lg-20">Postuler<i
+                     class="fas fa-long-arrow-alt-right ml-20"></i></a>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- career top area end -->
+
+   <!-- career detail start -->
+   <section class="career-detail pt-100 pb-70">
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-8 col-lg-7">
+               <div class="career-left">
+                  <h5 class="f-700 mb-10">{{emplois.job_info_title}}</h5>
+                  <p>{{emplois.job_info_p}}.</p>
+                  <h5 class="f-700 mb-10">{{emplois.job_h5}}</h5>
+                  <ul class="check-list-2 mb-15">
+                     <li>{{emplois.job_li}}</li>
+                     <li>{{emplois.job_li1}}</li>
+                     <li>{{emplois.job_li2}}</li>
+                     <li>{{emplois.job_li3}} </li>
+                     <li>{{emplois.job_li4}} </li>
+                     <li>{{emplois.job_li5}}</li>
+                     <li>{{emplois.job_li6}} </li>
+                     <li>{{emplois.job_li7}} </li>
+                  </ul>
+                  <h5 class="f-700 mb-10">{{emplois.job_h51}}</h5>
+                  <ul class="check-list-2 mb-15">
+                     <li>{{emplois.job_li8}}</li>
+                     <li>{{emplois.job_li9}}</li>
+                     <li>{{emplois.job_li10}}</li>
+                     <li>{{emplois.job_li11}} </li>
+                     <li>{{emplois.job_li12}} </li>
+                     <li>{{emplois.job_li13}}</li>
+                     <li>{{emplois.job_li14}} </li>
+                     <li>{{emplois.job_li15}} </li>
+                  </ul>
+                  <div class="row align-items-center mt-35 mb-md-60">
+                     <div class="col-md-6">
+                        <a onclick="openModal()" href="#" class="btn btn-square blob-small">Postuler
+                           <i class="fas fa-long-arrow-alt-right ml-20"></i>
+                        </a>
+                     </div>
+                     <div id="myModal" class="mb-md-60"
+                        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 999; background-color: #fff; padding: 20px; text-align: center; overflow-y: auto;">
+                        <h4 class="f-700 mt-40 mb-20">Remplir le formulaire de candidature</h4>
+                        <form style="max-width: 50%; margin: 0 auto;" method="POST">
+                           <div class="row">
+                              <div class="col-lg-6">
+                                 <div class="form-group relative mb-30">
+                                    <label for="name">Votre Prénom & Nom</label>
+                                    <input type="text" class="form-control input-white green-border" id="name"
+                                       placeholder="Chaka X" name="" />
+                                    <i class="far fa-user transform-center"></i>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group relative mb-30">
+                                    <label for="email">Votre Adresse Mail</label>
+                                    <input type="email" class="form-control input-white green-border" id="email"
+                                       placeholder="chaka@exemple.com" name="" />
+                                    <i class="far fa-envelope transform-center"></i>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group relative mb-30">
+                                    <label for="tel">Votre Numéro De Téléphone</label>
+                                    <input type="tel" class="form-control input-white green-border" id="tel"
+                                       placeholder="+indicatif 00000" name="" />
+                                    <i class="fas fa-phone transform-center"></i>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group relative mb-30">
+                                    <label for="postale">Votre Adresse Postale</label>
+                                    <input type="text" class="form-control input-white green-border" id="postale"
+                                       placeholder="938890" name="" />
+                                    <i class="fas fa-globe transform-center"></i>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group relative mb-30">
+                                    <label for="poste">Votre Postes Précedents</label>
+                                    <input type="text" class="form-control input-white green-border" id="poste"
+                                       placeholder="Exemple : Developpeur Web" name="" />
+                                    <i class="fas fa-user transform-center"></i>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group relative mb-30">
+                                    <label for="taches">Responsabilités et Réalisations</label>
+                                    <input type="text" class="form-control input-white green-border" id="taches"
+                                       placeholder="Exemple : Création, Maintenance" name="" />
+                                    <i class="fas fa-user transform-center"></i>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group relative mb-30">
+                                    <label for="tel">Langages de programmation Et Outils</label>
+                                    <input type="text" class="form-control input-white green-border" id="tel"
+                                       placeholder="Python, Java, Django, Canva, VsCode" name="" />
+                                    <i class="fas fa-desktop transform-center"></i>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group relative mb-30">
+                                    <label for="interets">Pourqoui souhaitez-vous nous réjoindre ?</label>
+                                    <input type="text" class="form-control input-white green-border" id="interets"
+                                       placeholder="Exemple : Parce que j'adore l'equipe etc...." name="" />
+                                    <i class="fas fa-user transform-center"></i>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group relative mb-30">
+                                    <label for="passions">Centres d'intérêts liés à l'informatique?</label>
+                                    <input type="text" class="form-control input-white green-border" id="passions"
+                                       placeholder="Exemple : Le défi, le code, la résolution etc..." name="" />
+                                    <i class="fas fa-user transform-center"></i>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6">
+                                 <div class="form-group relative mb-30">
+                                    <label for="file">Upluader votre CV</label>
+                                    <input type="file" class="form-control input-white green-border" id="file"
+                                       placeholder="Votre CV" name="" />
+                                    <i class="far fa-file transform-center"></i>
+                                 </div>
+                              </div>
+                              <div class="col-lg-12">
+                                 <textarea class="form-control input-white green-border mb-30" id="message" cols="30"
+                                    rows="7" placeholder="Lettre De Motivation" name=""></textarea>
+                                    <i class="far fa-envelope transform-center"></i>
+                              </div>
+                              <div class="col-lg-12">
+                                 <button type="submit" class="btn btn-square">
+                                    POSTULER<i class="fas fa-long-arrow-alt-right ml-20"></i>
+                                 </button>
+                              </div>
+                           </div>
+                        </form>
+                        <button onclick="closeModal()" style="position: absolute; top: 20px; right: 20px; background-color: #000; border: 2px solid #c32a36; border-radius: 8px; color: #fff; font-size: 20px; font-weight: 900; padding: 10px;">
+                           X
+                        </button>
+                     </div>
+                     <div class="col-md-6 mt-sm-30">
+                        <div class="d-flex share-case justify-content-left justify-content-md-end">
+                           <p class="fs-16 mr-20 mb-0">Share:</p>
+                           <ul class="social-icons black ">
+                              <li>
+                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
+                              </li>
+                              <li>
+                                 <a href="#"><i class="fab fa-twitter"></i></a>
+                              </li>
+                              <li>
+                                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                              </li>
+                              <li>
+                                 <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                              </li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-5">
+               <div class="right-box bg-light-white mb-30">
+                  <div class="right-box-head">
+                     <h4>{{emplois.job_h4}}</h4>
+                  </div>
+                  <div class="right-box-content">
+                     <ul class="mt-15 mb-10">
+                        <li>
+                           <div class="other-dervices d-flex align-items-center">
+                              <div class="icon">
+                                 <img src="{{emplois.job_img.url}}" alt="">
+                              </div>
+                              <div class="icon-text">
+                                 <h6>{{emplois.job_h6}}</h6>
+                                 <p>{{emplois.job_p}}</p>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="other-dervices d-flex align-items-center">
+                              <div class="icon">
+                                 <img src="{{emplois.job_img1.url}}" alt="">
+                              </div>
+                              <div class="icon-text">
+                                 <h6>{{emplois.job_h61}}</h6>
+                                 <p>{{emplois.job_p1}}</p>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="other-dervices d-flex align-items-center">
+                              <div class="icon">
+                                 <img src="{{emplois.job_img2.url}}" alt="">
+                              </div>
+                              <div class="icon-text">
+                                 <h6>{{emplois.job_h62}}</h6>
+                                 <p>{{emplois.job_p2}} </p>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="other-dervices d-flex align-items-center">
+                              <div class="icon">
+                                 <img src="{{emplois.job_img3.url}}" alt="">
+                              </div>
+                              <div class="icon-text">
+                                 <h6>{{emplois.job_h63}}</h6>
+                                 <p>{{emplois.job_p3}}</p>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="other-dervices d-flex align-items-center">
+                              <div class="icon">
+                                 <img src="{{emplois.job_img4.url}}" alt="">
+                              </div>
+                              <div class="icon-text">
+                                 <h6>{{emplois.job_h64}}</h6>
+                                 <p>{{emplois.job_p4}}</p>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+
+               <div class="right-box bg-light-white mb-30">
+                  <div class="right-box-head">
+                     <h4>Besoin d'Aide?</h4>
+                  </div>
+                  <div class="right-box-content">
+                     <ul class="mt-10 mb-10">
+                        <li>
+                           <div class="d-flex">
+                              <div class="icon-round-box">
+                                 <div class="icon-round-box-icon">
+                                    <i class="fas fa-phone-volume green"></i>
+                                 </div>
+                              </div>
+                              <div class="icon-round-box-text">
+                                 <p><span>Phone:</span> (+223) 70-16-33-86</p>
+                                 <p><span>Mob:</span> (+223) 68-38-82-92</p>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="d-flex">
+                              <div class="icon-round-box">
+                                 <div class="icon-round-box-icon">
+                                    <i class="far fa-envelope green"></i>
+                                 </div>
+                              </div>
+                              <div class="icon-round-box-text">
+                                 <p>jobs@futuriste-ai.ml</p>
+                                 <p>contact@futuriste-ai.ml</p>
+                              </div>
+                           </div>
+                        </li>
+                        <li>
+                           <div class="d-flex">
+                              <div class="icon-round-box">
+                                 <div class="icon-round-box-icon">
+                                    <i class="fas fa-map-marker-alt green"></i>
+                                 </div>
+                              </div>
+                              <div class="icon-round-box-text">
+                                 <p>223 Tabacoro,Bamako, Mali</p>
+                              </div>
+                           </div>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </div>
+   </section>
+   <!-- career detail end -->
+   <script>
+      function openModal() {
+         document.getElementById("myModal").style.display = "block";
+      }
+
+      function closeModal() {
+         document.getElementById("myModal").style.display = "none";
+      }
+   </script>
+   {% include "includes/about-area.html" %}
+   {% endblock %}

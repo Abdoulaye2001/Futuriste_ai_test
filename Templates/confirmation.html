@@ -1,0 +1,40 @@
+{% extends 'base-home.html' %}
+{% load static %}
+{% block title %}
+<title>{{context}}</title>{% endblock %}
+{% block content %}
+
+<body>
+
+
+    <!-- Thank you start -->
+    <section class="thanks pt-100 pb-100" style="background-image: url('{% static "img/bg/bg-abt.jpg" %}');"
+        data-overlay="9">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div id="message" style="display: none;" class="thank-outer z-5">
+                        <div class="thank-icon flex-center">
+                            <img src="{% static "img/career/hand.png" %}" alt="">
+                        </div>
+                        <h3 class="f-700">Merci {{personne}} ! Nous avons reçu votre demande de devis</h3>
+                        <p>Votre demande de devis a été bien reçue. Nous vous adresserons le devis à l’adresse {{email}}. En outre, un appel téléphonique gratuit vous sera consacré à ce sujet le [{{start_date}}] au numéro {{phone}}.
+                        </p>
+                        <p>
+                            Vous serez rédiriger vers la page d'Accueil dans 20 sécondes.
+                        </p>
+                        <a href="{% url "home" %}" class="btn btn-round mt-10">Rétourner à l'Accueil </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Thank you end -->
+    <script>
+        const delayInSeconds = 10;
+        document.getElementById('message').style.display = 'block';
+        setTimeout(function () {
+            window.location.href = "/"
+        }, delayInSeconds * 2000);
+    </script>
+    {% endblock %}
